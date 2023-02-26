@@ -1,4 +1,4 @@
-# NoPlaceLikeHome
+# No Place Like Home
 
 ![Screenshot of Launcher](screenshot.png)
 
