@@ -10,6 +10,11 @@ The included icons are just examples (and no rights to them are implied by the l
 
 ## Config File Notes
 
+### Site Identity
+
+- `$useTitle` is the value shown in the title bar (populates the `<title>` tag)
+- `$useDomain` helps to determine access level, specify the domain or hostname you will most commonly access the site with.
+
 ### Search Prefix
 
 The search prefix allows you to determine which search engine will be sent queries from the search bar. I've tested with Google, Bing and DuckDuckGo.
