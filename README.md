@@ -2,7 +2,9 @@
 
 ![Screenshot of Launcher](screenshot.png)
 
-No Place Like Home is a simple, configurable web-app launcher for your web server. Its designed to gracefully fallback to support older browsers, so some of the smarts are in PHP or behind feature detection. You provide the icons and wallpaper, so if working on old devices matters to you, make sure you scale and dither appropriately (eg: gif, not png)
+No Place Like Home is a simple, configurable web-app launcher for your web server. Its designed to gracefully fallback to support older browsers, so some of the smarts are in PHP or behind feature detection. Its also responsive, for big or small screens, and supports light and dark mode in modern browsers. 
+
+You provide the icons and wallpaper, so if working on old devices matters to you, make sure you scale and dither appropriately (eg: gif, not png)
 
 The included icons are just examples (and no rights to them are implied by the license in this repo). You can provide your own, at whatever path (relative or absolute) you want, via the config file. Rename the example file `config-example.php` to `config.php` and edit/add/remove as you see fit.
 

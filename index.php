@@ -5,7 +5,7 @@
 ?>
 <html>
 <head>
-    <title>No Place Like Home</title>
+    <title><?php echo $useTitle; ?></title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
     <script src="functions.js"></script>

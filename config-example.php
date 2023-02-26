@@ -1,6 +1,7 @@
 <?php
-$searchPrefix = "https://www.bing.com/search?q=";
+$useTitle = "My Home Page";
 $useDomain = "my.example.com";
+$searchPrefix = "https://www.bing.com/search?q=";
 $localDef = array ("192", "168", "10");
 $vpnDef = array ("172","185","136");
 $LauncherIcons = array(
