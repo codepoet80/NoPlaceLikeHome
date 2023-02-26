@@ -1,0 +1,90 @@
+body {
+    background-color: darkviolet;
+    background-image: url('wallpaper-light.jpg');
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: dimgray;
+    background-image: url('wallpaper-dark.jpg');
+  }
+}
+body table tr td {
+    font-family: Arial, helvetica;
+    margin: 0;
+    padding: 0;
+}
+td {
+    margin: 0; padding: 0;
+}
+a {
+    text-decoration: none;
+}
+/* Search Bar */
+.searchBar {
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#searchQueryInput {
+    width: 25em;
+    height: 2.8rem;
+    background: rgba(223, 223, 223, 0.7);
+    outline: none;
+    border: none;
+    border-radius: 1.625rem;
+    padding: 0 3.5rem 0 1.5rem;
+    font-size: 1rem;
+    border: 1px solid black;
+}
+#searchQuerySubmit {
+    width: 3.5rem;
+    height: 2.8rem;
+    margin-left: -3.5rem;
+    background: none;
+    border: none;
+    outline: none;
+}
+#searchQuerySubmit:hover {
+    cursor: pointer;
+}
+/* Icon Grid */
+#container {
+    border-radius: 25px;
+    margin: 0 auto;
+    width: 80%;
+    padding: 24px;
+    display: inline-block; text-align: center;
+    min-height: 300px;
+    background-color: rgba(155, 155, 155, 0.7);
+}
+span.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 128px;
+    margin: 10px;
+}
+.icon {
+    width: 48px;
+    height: 48px;
+    padding: 18px;
+    border-radius: 12px;
+    background-color: lightgray;
+}
+.icon:hover {
+    off-background-color: lightblue !important;
+    off-background-blend-mode: lighten;
+    filter: brightness(140%);
+}
+.caption {
+    margin-top: 5px;
+    display: block;
+    color: white;
+    text-shadow: 1px 1px 2px black; 
+}
+.footer {
+    margin-top: 20px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    font-size:12px;
+}
