@@ -3,7 +3,7 @@ $useTitle = "My Home Page";
 $useDomain = "my.example.com";
 $searchPrefix = "https://www.bing.com/search?q=";
 $localDef = array ("192", "168", "10");
-$vpnDef = array ("172","185","136");
+$vpnDef = array ("172","185","136","1");
 $LauncherIcons = array(
     (object) [
         'img' => 'icons/icon1.png',
