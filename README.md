@@ -23,8 +23,8 @@ The search prefix allows you to determine which search engine will be sent queri
 
 Access level can be used to show or hide icons, based on detected conditions. To make sure this is applied correctly for your environment, adjust the global variables as follows:
 
-- `$localDef` is the IP address configuration that would indicate a visitor is on the same network as the server. Adjust to match the IP settings handed out by your router.
-- `$vpnDef` is used to indicate a visitor is coming through a gateway (like a VPN). Adjust to match the IP address of the gateway.
+- `$localDef` is the IP address configuration that would indicate a visitor is on the same network as the server. Adjust to match the IP settings handed out by your router. The last octet is deliberately omitted, to allow the whole subnet.
+- `$vpnDef` is used to indicate a visitor is coming through a VPN or proxy. Adjust to match the IP address of the gateway. The last octet is included on the assumption that traffic shows as being from the proxy.
 - All other visitors are considered remote.
 
 ### Launcher Icons
