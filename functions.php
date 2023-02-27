@@ -29,9 +29,9 @@ function getAccessLevel($localDef, $vpnDef, $useDomain) {
     if(!$isLocal) {
         $isLocal = (
             ($localIP[0] == $vpnDef[0]) &&
-            ($localIP[0] == $vpnDef[1]) &&
-            ($localIP[0] == $vpnDef[2]) &&
-            ($localIP[0] == $vpnDef[3])
+            ($localIP[1] == $vpnDef[1]) &&
+            ($localIP[2] == $vpnDef[2]) &&
+            ($localIP[3] == $vpnDef[3])
         );
         if($isLocal) { 
             return "vpn";
