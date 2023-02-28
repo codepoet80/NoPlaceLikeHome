@@ -1,6 +1,7 @@
 body {
     background-color: darkviolet;
     background-image: url('wallpaper-light.jpg');
+    background-size: cover;
 }
 @media (prefers-color-scheme: dark) {
   body {
