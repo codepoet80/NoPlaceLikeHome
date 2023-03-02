@@ -4,7 +4,7 @@ $useDomain = "my.example.com";
 $cacheBust = false;
 $searchPrefix = "https://www.bing.com/search?q=";
 $localDef = array("192.168.1");
-$vpnDef = array("10.7.204", "172.185.32");
+$vpnDef = array("10.7.204", "172.185.32.1");
 $LauncherIcons = array(
     (object) [
         'img' => 'icons/icon1.png',
