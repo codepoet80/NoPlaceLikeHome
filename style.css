@@ -26,6 +26,19 @@ a {
     align-items: center;
     margin-bottom: 20px;
 }
+::placeholder {
+    color: dimgray;
+    opacity: 1; 
+}
+    ::-webkit-input-placeholder {
+    color:dimgray;
+}
+:-ms-input-placeholder {
+    color: dimgray;
+}
+::-ms-input-placeholder {
+    color: dimgray;
+}
 #searchQueryInput {
     width: 25em;
     height: 2.8rem;
