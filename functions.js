@@ -17,10 +17,17 @@ document.onreadystatechange = function () {
     }
 }
 function initSearch() {
-    console.log("the page has fully loaded!");
     document.getElementById('searchQueryInput').visibility = 'visible';
     document.getElementById('searchQueryInput').value = ''; 
     document.getElementById('searchQueryInput').focus();
+}
+function submitSearch(e) {
+    if (location.protocol == 'https' && detectXHR()) {
+        return false;
+    } else {
+        console.log("searching with retro search!");
+        return true;
+    }
 }
 function doNavigate(e, force)
 {
@@ -31,17 +38,19 @@ function doNavigate(e, force)
         if (isURL || force || e.ctrlKey)
         {
             if (!isURL)
-            searchText = "http://www." + searchText + ".com";
+                searchText = "http://www." + searchText + ".com";
             if (searchText.indexOf("http://") == -1 && searchText.indexOf("https://"))
-            searchText = "http://" + searchText;
+                searchText = "http://" + searchText;
         }
         else
             searchText = searchPrefix + encodeURIComponent(searchText);
-        document.getElementById("searchQueryInput").value = searchText;
+        //document.getElementById("searchQueryInput").value = searchText;
         if (e.altKey || e.shiftKey)
             window.open(searchText, "_blank");
-        else
+        else {
+            console.log("search submit navigating to: " + searchText);
             document.location = searchText;
+        }
     }
     else
     {
