@@ -26,10 +26,10 @@ function getAccessLevel($localDef, $vpnDef, $useDomain) {
         }
     }
     if(!$isLocal) {
-        $isLocal = ($localDef == $visitorSub);
+        $isLocal = (in_array($visitorSub, $localDef));
     }
     if(!$isLocal) {
-        if ($vpnDef == $visitorSub) {
+        if (in_array($visitorSub, $vpnDef)) {
             return "vpn";
         }
     } 

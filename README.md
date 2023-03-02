@@ -14,6 +14,7 @@ The included icons are just examples (and no rights to them are implied by the l
 
 - `$useTitle` is the value shown in the title bar (populates the `<title>` tag)
 - `$useDomain` helps to determine access level, specify the domain or hostname you will most commonly access the site with.
+- `$cacheBust` if true, a unique id will be added to the query string of the style, to force browsers to reload the stylesheet with each load (which may add to load times)
 
 ### Search Prefix
 
@@ -23,8 +24,8 @@ The search prefix allows you to determine which search engine will be sent queri
 
 Access level can be used to show or hide icons, based on detected conditions. To make sure this is applied correctly for your environment, adjust the global variables as follows:
 
-- `$localDef` is the IP address configuration that would indicate a visitor is on the same network as the server. Adjust to match the IP settings handed out by your router. The last octet is deliberately omitted, to allow the whole subnet.
-- `$vpnDef` is used to indicate a visitor is coming through a VPN or proxy. Adjust to match the IP address of the gateway. The last octet is deliberately omitted, to allow the whole subnet.
+- `$localDef` an array of IP address configurations that would indicate a visitor is on the same network as the server. Adjust to match the IP settings handed out by your router. The last octet is deliberately omitted, to allow the whole subnet.
+- `$vpnDef` an array of IP address configurations that would indicate a visitor is coming through a VPN or proxy. Adjust to match the IP address of the gateway. The last octet is deliberately omitted, to allow the whole subnet.
 - All other visitors are considered remote.
 
 ### Launcher Icons
