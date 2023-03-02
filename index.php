@@ -9,9 +9,9 @@
 <html>
 <head>
     <title><?php echo $useTitle; ?></title>
-    <link rel="stylesheet" href="style.css<?php echo $cacheId; ?>">
+    <link rel="stylesheet" href="style.css?<?php echo $cacheId; ?>">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
-    <script src="functions.js<?php echo $cacheId; ?>"></script>
+    <script src="functions.js?<?php echo $cacheId; ?>"></script>
     <script>
         var searchPrefix = "<?php echo($searchPrefix); ?>";
         var colorThief = new ColorThief();
