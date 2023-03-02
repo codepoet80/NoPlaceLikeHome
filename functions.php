@@ -16,7 +16,7 @@ function getAccessLevel($localDef, $vpnDef, $useDomain) {
     $remoteSub = substr($_SERVER['REMOTE_ADDR'], 0, strrpos($_SERVER['REMOTE_ADDR'], '.'));
     $visitorIP = getUserIpAddr();
     $visitorSub = substr($visitorIP, 0, strrpos($visitorIP, '.'));
-//    echo "server: " . $serverSub . ", remote: " . $remoteSub . ", visitor: ". $visitorIP;
+//    echo "server: " . $serverSub . ", remote: " . $remoteSub . ", visitor: ". $visitorIP . "<br>";
 //    echo "localDef: " . $localDef . ", vpnDef: " . $vpnDef . "<br>";
     $isLocal = false;
     $isLocal = ($serverSub == $remoteSub);
@@ -26,10 +26,10 @@ function getAccessLevel($localDef, $vpnDef, $useDomain) {
         }
     }
     if(!$isLocal) {
-        $isLocal = ($localDef == $serverSub);
+        $isLocal = ($localDef == $visitorSub);
     }
     if(!$isLocal) {
-        if ($vpnDef == $serverSub) {
+        if ($vpnDef == $visitorSub) {
             return "vpn";
         }
     } 
