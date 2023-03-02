@@ -40,9 +40,9 @@ function getAccessLevel($localDef, $vpnDef, $useDomain) {
     }
 }
 function getProtocol() {
-    $isHttps = false;
     if(isset($_SERVER['HTTPS'])) {
-	    $isHttps = true;
+	    return "https";
     }
+    return "http";
 }
 ?>
