@@ -41,10 +41,11 @@ function doNavigate(e, force)
                 searchText = "http://www." + searchText + ".com";
             if (searchText.indexOf("http://") == -1 && searchText.indexOf("https://"))
                 searchText = "http://" + searchText;
+            document.getElementById("searchQueryInput").value = searchText;
         }
         else
             searchText = searchPrefix + encodeURIComponent(searchText);
-        //document.getElementById("searchQueryInput").value = searchText;
+
         if (e.altKey || e.shiftKey)
             window.open(searchText, "_blank");
         else {
