@@ -51,7 +51,7 @@
         ) {
             echo "<span class='item' id='item$iconCount'>";
             echo "<a href='$LauncherIcon->link'>";
-            echo "<img src='$LauncherIcon->img' id='icon$iconCount' class='icon' onload='upgradeIcon(this)' title='$LauncherIcon->caption' width='64' border='0'/>";
+            echo "<img src='$LauncherIcon->img' id='icon$iconCount' class='icon' onload='upgradeIcon(this)' onerror='this.onerror = null; this.src=\"./oops.png\"' title='$LauncherIcon->caption' width='64' border='0'/>";
             echo "</a>";
             echo "</span>\r\n";
         }
