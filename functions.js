@@ -22,7 +22,8 @@ function initSearch() {
     document.getElementById('searchQueryInput').focus();
 }
 function submitSearch(e) {
-    if (location.protocol == 'https' && detectXHR()) {
+    if (location.protocol == 'https' || detectXHR()) {
+        doNavigate(null, false);
         return false;
     } else {
         console.log("searching with retro search!");
@@ -35,7 +36,7 @@ function doNavigate(e, force)
     if (searchText != "")
     {
         var isURL = urlChecker(searchText);
-        if (isURL || force || e.ctrlKey)
+        if (isURL || force || (e != null && e.ctrlKey))
         {
             if (!isURL)
                 searchText = "http://www." + searchText + ".com";
@@ -46,7 +47,7 @@ function doNavigate(e, force)
         else
             searchText = searchPrefix + encodeURIComponent(searchText);
 
-        if (e.altKey || e.shiftKey)
+        if (e != null && (e.altKey || e.shiftKey))
             window.open(searchText, "_blank");
         else {
             console.log("search submit navigating to: " + searchText);
