@@ -7,23 +7,23 @@ $localDef = array("192.168.1");
 $vpnDef = array("10.7.204", "172.185.32.1");
 $LauncherIcons = array(
     (object) [
-        'img' => 'icons/icon1.png',
+        'img' => 'icons/mail.png',
         'caption' => 'Mail',
-        'link' => 'http://outlook.office365.com',
+        'link' => 'https://mail.google.com',
         'access' => 'any',
         'protocol' => 'any'
     ],
     (object) [
-        'img' => 'icons/icon2.png',
-        'caption' => 'Icon 2',
-        'link' => 'http://example.com',
+        'img' => 'icons/contacts.png',
+        'caption' => 'Address Book',
+        'link' => 'https://contacts.google.com',
         'access' => 'remote',
         'protocol' => 'https'
     ],
     (object) [
-        'img' => 'icons/icon3.png',
-        'caption' => 'Icon 3',
-        'link' => 'http://example.com',
+        'img' => 'icons/Music.png',
+        'caption' => 'Pandora',
+        'link' => 'https://www.pandora.com',
         'access' => array ('local', 'vpn'),
         'protocol' => 'http'
     ]
