@@ -19,7 +19,8 @@ document.onreadystatechange = function () {
 function initSearch() {
     document.getElementById('searchQueryInput').visibility = 'visible';
     document.getElementById('searchQueryInput').value = ''; 
-    document.getElementById('searchQueryInput').focus();
+    if(!devicePrimarilyTouchScreen())
+        document.getElementById('searchQueryInput').focus();
 }
 function submitSearch(e) {
     if (location.protocol == 'https' || detectXHR()) {
@@ -85,6 +86,22 @@ function urlChecker(value)
         }
     }
     return false;
+}
+function devicePrimarilyTouchScreen() {
+    var touchscreen = false;
+    //if it has a touchscreen
+    if ('ontouchstart' in document.documentElement) {
+        touchscreen = true;
+    }
+    //unless its Windows
+    if (window.navigator.userAgent.indexOf("Windows")!= -1) {
+        touchscreen = false;
+    }
+    //but definitely if its one of these
+    if( /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+        touchscreen = true;
+    }
+    return touchscreen;
 }
 
 /* Colors */
