@@ -17,11 +17,13 @@ document.onreadystatechange = function () {
     }
 }
 function initSearch() {
+    var searchBar = document.getElementById('searchBar');
+    var searchBox = document.getElementById('searchQueryInput');
     if( /Kindle|Kobo/i.test(navigator.userAgent) ) {
         //Don't show search on eReaders
+        searchBar.style.display = 'none';
     } else {
-        var searchBox = document.getElementById('searchQueryInput');
-        searchBox.visibility = 'visible';
+        searchBar.style.display = 'block';
         searchBox.value = ''; 
         if(!devicePrimarilyTouchScreen())
             document.getElementById('searchQueryInput').focus();
