@@ -17,10 +17,13 @@ document.onreadystatechange = function () {
     }
 }
 function initSearch() {
-    document.getElementById('searchQueryInput').visibility = 'visible';
-    document.getElementById('searchQueryInput').value = ''; 
+    var searchBox = document.getElementById('searchQueryInput');
+    searchBox.visibility = 'visible';
+    searchBox.value = ''; 
     if(!devicePrimarilyTouchScreen())
         document.getElementById('searchQueryInput').focus();
+    else
+        document.getElementById('searchQueryInput').blur();
 }
 function submitSearch(e) {
     if (location.protocol == 'https' || detectXHR()) {
@@ -98,7 +101,7 @@ function devicePrimarilyTouchScreen() {
         touchscreen = false;
     }
     //but definitely if its one of these
-    if( /Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent) ) {
+    if( /Android|webOS|iPhone|iPad|iPod|Kindle|Kobo|Opera Mini/i.test(navigator.userAgent) ) {
         touchscreen = true;
     }
     return touchscreen;
