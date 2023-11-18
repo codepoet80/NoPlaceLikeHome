@@ -23,12 +23,12 @@ function initSearch() {
         //Don't show search on eReaders
         searchBar.style.display = 'none';
     } else {
-        searchBar.style.display = 'block';
-        searchBox.value = ''; 
+        searchBar.style.display = 'inline';
+        searchBox.value = '';
         if(!devicePrimarilyTouchScreen())
             document.getElementById('searchQueryInput').focus();
         else
-            document.getElementById('searchQueryInput').blur();    
+            document.getElementById('searchQueryInput').blur();
     }
 }
 function submitSearch(e) {
