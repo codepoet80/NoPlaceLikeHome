@@ -25,6 +25,7 @@ a {
     width: 100%;
     align-items: center;
     margin-bottom: 20px;
+    display: none;
 }
 ::placeholder {
     color: dimgray;
