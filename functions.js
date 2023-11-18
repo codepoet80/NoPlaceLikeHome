@@ -17,13 +17,17 @@ document.onreadystatechange = function () {
     }
 }
 function initSearch() {
-    var searchBox = document.getElementById('searchQueryInput');
-    searchBox.visibility = 'visible';
-    searchBox.value = ''; 
-    if(!devicePrimarilyTouchScreen())
-        document.getElementById('searchQueryInput').focus();
-    else
-        document.getElementById('searchQueryInput').blur();
+    if( /Kindle|Kobo/i.test(navigator.userAgent) ) {
+        //Don't show search on eReaders
+    } else {
+        var searchBox = document.getElementById('searchQueryInput');
+        searchBox.visibility = 'visible';
+        searchBox.value = ''; 
+        if(!devicePrimarilyTouchScreen())
+            document.getElementById('searchQueryInput').focus();
+        else
+            document.getElementById('searchQueryInput').blur();    
+    }
 }
 function submitSearch(e) {
     if (location.protocol == 'https' || detectXHR()) {
