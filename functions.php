@@ -26,6 +26,9 @@ function getAccessLevel($localDef, $vpnDef, $useDomain) {
         }
     }
     if(!$isLocal) {
+        $isLocal = (in_array($visitorIP, $localDef));
+    }
+    if(!$isLocal) {
         $isLocal = (in_array($visitorSub, $localDef));
     }
     if(!$isLocal) {
