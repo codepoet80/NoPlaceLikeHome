@@ -38,3 +38,9 @@ Determined by an array of objects you define. Set the Icon, Caption, destination
 + Access level can be defined as a single string value: `any`, `local`, `vpn`, `remote`
     + Access level can also be multiple values defined as an array of any of those values.
 + Protocol can be: `http`, `https`, `any`
+
+#### Swappable Icons
+
+This is an experimental feature where option (or alt) clicking an icon can swap it, and the link with an alternate.
+
+- Define these in the config with `altimg` and `altlink`.

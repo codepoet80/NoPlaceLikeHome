@@ -49,12 +49,18 @@
         if (($LauncherIcon->access == "any" || $LauncherIcon->access == $accessLevel || (is_array($LauncherIcon->access) && in_array($accessLevel, $LauncherIcon->access))) &&
             ($LauncherIcon->protocol == "any" || $LauncherIcon->protocol == getProtocol())
         ) {
-            echo "<span class='item' id='item$iconCount'>";
-            echo "<a href='$LauncherIcon->link'>";
+            echo "<span class='item' id='item$iconCount' onmousedown='checkIconAlt(event, this)'";
+            if (isset($LauncherIcon->altlink))
+		echo " altlink='" . $LauncherIcon->altlink . "'";
+            if (isset($LauncherIcon->altimg))
+		echo " altimg='" . $LauncherIcon->altimg . "'";
+	    echo ">";
+            echo "<a id='itemLink$iconCount' href='$LauncherIcon->link'>";
             echo "<img src='$LauncherIcon->img' id='icon$iconCount' class='icon' onload='upgradeIcon(this)' onerror='this.onerror = null; this.src=\"./oops.png\"' title='$LauncherIcon->caption' width='64' border='0'/>";
             echo "</a>";
             echo "</span>\r\n";
         }
+        $iconCount++;
     }
 ?>
             </div>

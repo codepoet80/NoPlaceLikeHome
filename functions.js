@@ -156,3 +156,24 @@ function complementryRGBColor(r, g, b) {
         return [Math.round(r*255), Math.round(g*255), Math.round(b*255)];
     }
 }
+
+/* Icons */
+function checkIconAlt(event, sender) {
+    if (event.altKey && sender.getAttribute("altlink")) {
+
+        var link = document.getElementById(sender.id.replace("item", "itemLink"));
+        var newLink = sender.getAttribute("altlink");
+        sender.setAttribute("altlink", link.href);
+        link.href = newLink;
+
+        var icon = document.getElementById(sender.id.replace("item", "icon"));
+        if (sender.getAttribute("altimg")) {
+            var newIcon = sender.getAttribute("altimg");
+            sender.setAttribute("altimg", icon.src);
+            icon.src = newIcon;
+        }
+
+        icon.title= "";
+        event.stopPropagation();
+    }
+}
