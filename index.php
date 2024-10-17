@@ -27,6 +27,8 @@
         }
     </script>
     <meta name='viewport' content='height=device-height'>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body>
 <table width=100% height=100% border=0 cellpadding=0 cellspacing=0>
