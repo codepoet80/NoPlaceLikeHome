@@ -50,7 +50,7 @@ function doNavigate(e, force)
         {
             if (!isURL)
                 searchText = "http://www." + searchText + ".com";
-            if (searchText.indexOf("http://") == -1 && searchText.indexOf("https://"))
+            if (searchText.indexOf("http://") == -1 && searchText.indexOf("https://") == -1)
                 searchText = "http://" + searchText;
             document.getElementById("searchQueryInput").value = searchText;
         }
@@ -88,12 +88,33 @@ function keyChecker(e){
 }
 function urlChecker(value)
 {
-    var urlHints = ['www.', '.com', '.net', '.org', '.tv', '.info', 'http:', 'https:', 'ftp:'];
-    for (var i = 0; i < urlHints.length; i++) {
-        if (value.indexOf(urlHints[i]) > -1) {
-            return true;
-        }
+    if (!value || typeof value !== 'string') return false;
+
+    value = value.trim().toLowerCase();
+
+    // Protocol check
+    if (/^(https?|ftp|file):\/\//.test(value)) {
+        return true;
     }
+
+    // localhost or IP address
+    if (value.startsWith('localhost') || /^\d{1,3}\.\d{1,3}/.test(value)) {
+        return true;
+    }
+
+    // www prefix
+    if (value.startsWith('www.')) {
+        return true;
+    }
+
+    // Domain pattern: has dot, not at start/end, followed by 2+ letter TLD
+    // Matches: "example.com", "sub.domain.io", "site.co.uk"
+    // Avoids: "info about", ".hidden", "file.txt"
+    if (/^[a-z0-9][-a-z0-9]*\.[a-z0-9][-a-z0-9.]*\.[a-z]{2,}$/i.test(value) ||
+        /^[a-z0-9][-a-z0-9]*\.[a-z]{2,}$/i.test(value)) {
+        return true;
+    }
+
     return false;
 }
 function devicePrimarilyTouchScreen() {
