@@ -1,15 +1,8 @@
 <?php
 function getUserIpAddr(){
-    if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-        //ip from share internet
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    }elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-        //ip pass from proxy
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    }else{
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
+    // Only trust REMOTE_ADDR to prevent IP spoofing attacks
+    // HTTP_CLIENT_IP and HTTP_X_FORWARDED_FOR can be forged by attackers
+    return $_SERVER['REMOTE_ADDR'];
 }
 function getAccessLevel($localDef, $vpnDef, $useDomain) {
     $serverSub = substr($_SERVER['SERVER_ADDR'], 0, strrpos($_SERVER['SERVER_ADDR'], '.'));

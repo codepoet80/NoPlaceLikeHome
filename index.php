@@ -53,12 +53,12 @@
         ) {
             echo "<span class='item' id='item$iconCount' onmousedown='checkIconAlt(event, this)'";
             if (isset($LauncherIcon->altlink))
-		echo " altlink='" . $LauncherIcon->altlink . "'";
+		echo " altlink='" . htmlspecialchars($LauncherIcon->altlink, ENT_QUOTES, 'UTF-8') . "'";
             if (isset($LauncherIcon->altimg))
-		echo " altimg='" . $LauncherIcon->altimg . "'";
+		echo " altimg='" . htmlspecialchars($LauncherIcon->altimg, ENT_QUOTES, 'UTF-8') . "'";
 	    echo ">";
-            echo "<a id='itemLink$iconCount' href='$LauncherIcon->link'>";
-            echo "<img src='$LauncherIcon->img' id='icon$iconCount' class='icon' onload='upgradeIcon(this)' onerror='this.onerror = null; this.src=\"./oops.png\"' title='$LauncherIcon->caption' width='64' border='0'/>";
+            echo "<a id='itemLink$iconCount' href='" . htmlspecialchars($LauncherIcon->link, ENT_QUOTES, 'UTF-8') . "'>";
+            echo "<img src='" . htmlspecialchars($LauncherIcon->img, ENT_QUOTES, 'UTF-8') . "' id='icon$iconCount' class='icon' onload='upgradeIcon(this)' onerror='this.onerror = null; this.src=\"./oops.png\"' title='" . htmlspecialchars($LauncherIcon->caption, ENT_QUOTES, 'UTF-8') . "' width='64' border='0'/>";
             echo "</a>";
             echo "</span>\r\n";
         }
@@ -66,7 +66,7 @@
     }
 ?>
             </div>
-            <div class="footer">Your IP has been logged as: <?php echo (getUserIpAddr() . ". Your access level is: " . $accessLevel) ?></div>
+            <div class="footer">Your IP has been logged as: <?php echo htmlspecialchars(getUserIpAddr(), ENT_QUOTES, 'UTF-8') . ". Your access level is: " . htmlspecialchars($accessLevel, ENT_QUOTES, 'UTF-8') ?></div>
         </td>
     </tr>
 </table>
